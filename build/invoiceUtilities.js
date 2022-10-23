@@ -12,7 +12,8 @@ export class InvoiceUtilities {
         for (let perf of invoices[0].performances) {
             const play = plays[perf.playID];
             switch (play.type) {
-                case tragedy:
+                case "tragedy":
+                    tragedy;
                     break;
                 case comedy:
                     break;
