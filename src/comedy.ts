@@ -1,19 +1,24 @@
 import { invoices } from './invoices.js';
 import { IperfAudience } from './IperfAudience.js';
 
-class comedy implements IperfAudience {
+export class comedy implements IperfAudience {
     audience:number;
     thisAmount:number = 30000;
+    volumeCredits:number = 0;
 
-    constructor(audience:number, thisAmount:number){
+    constructor(audience:number, thisAmount:number, volumeCredits:number){
         this.audience=audience;
         this.thisAmount=thisAmount;
+        this.volumeCredits=volumeCredits;
     }
 
     audienceAmount(audience:number):number{
         if (audience > 20) {this.thisAmount += 10000 + 500 * (audience - 20)};
         return this.thisAmount;
     }
-}
 
-export { comedy }
+    AddVolumeCredits(audience:number):number{
+        this.volumeCredits += Math.floor(audience / 5);
+        return this.volumeCredits;
+    }
+}

@@ -1,8 +1,10 @@
-class comedy {
-    constructor(audience, thisAmount) {
+export class comedy {
+    constructor(audience, thisAmount, volumeCredits) {
         this.thisAmount = 30000;
+        this.volumeCredits = 0;
         this.audience = audience;
         this.thisAmount = thisAmount;
+        this.volumeCredits = volumeCredits;
     }
     audienceAmount(audience) {
         if (audience > 20) {
@@ -11,5 +13,8 @@ class comedy {
         ;
         return this.thisAmount;
     }
+    AddVolumeCredits(audience) {
+        this.volumeCredits += Math.floor(audience / 5);
+        return this.volumeCredits;
+    }
 }
-export { comedy };
